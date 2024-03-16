@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Web de Descargas</title>
+    <title>Proyecto Hablando</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,6 +18,7 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px; /* Añadido espacio en la parte inferior para los logos */
         }
         #sidebar {
             width: 200px;
@@ -42,17 +43,24 @@
         .options {
             display: none;
             margin-top: 10px;
+            border-radius: 10px;
+            overflow: hidden; /* Añadido para ocultar el desbordamiento de los logos */
         }
         .options a {
             display: block;
             margin-bottom: 5px;
-            padding: 10px;
+            padding: 20px;
             background: #f9f9f9;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px;
             text-decoration: none;
             color: #333;
             transition: background 0.3s ease;
+            overflow: hidden; /* Añadido para ocultar el desbordamiento de los logos */
+        }
+        .options a img {
+            float: left;
+            margin-right: 10px;
         }
         .options a:hover {
             background: #eaeaea;
@@ -62,12 +70,12 @@
 <body>
     <div id="container">
         <div id="sidebar">
-            <h2>Categorías</h2>
+            <h2>Proyecto Hablando</h2>
             <ul>
-                <li><a href="#" onclick="mostrarDescargas('juegos')">Juegos</a></li>
-                <li><a href="#" onclick="mostrarDescargas('aplicaciones')">Aplicaciones</a></li>
-                <li><a href="#" onclick="mostrarDescargas('programacion')">Programación</a></li>
-                <li><a href="#" onclick="mostrarDescargas('tutoriales')">Tutoriales</a></li>
+                <li><a href="#" onclick="mostrarDescargas('juegos')"><img src="icono_juegos.png" alt="Juegos" width="30" height="30"> Juegos</a></li>
+                <li><a href="#" onclick="mostrarDescargas('aplicaciones')"><img src="icono_aplicaciones.png" alt="Aplicaciones" width="30" height="30"> Aplicaciones</a></li>
+                <li><a href="#" onclick="mostrarDescargas('programacion')"><img src="icono_programacion.png" alt="Programación" width="30" height="30"> Programación</a></li>
+                <li><a href="#" onclick="mostrarDescargas('tutoriales')"><img src="icono_tutoriales.png" alt="Tutoriales" width="30" height="30"> Tutoriales</a></li>
             </ul>
         </div>
         <div id="content">
@@ -84,23 +92,23 @@
             listaDescargas.innerHTML = ''; // Limpiar la lista de descargas
 
             if (categoria === 'juegos') {
-                listaDescargas.innerHTML += '<li><a href="descargas/juegos.zip">Juego 1</a></li>';
-                listaDescargas.innerHTML += '<li><a href="descargas/juegos2.zip">Juego 2</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/juegos.zip"><img src="icono_juegos.png" alt="Juegos" width="30" height="30"> Juego 1</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/juegos2.zip"><img src="icono_juegos.png" alt="Juegos" width="30" height="30"> Juego 2</a></li>';
                 // Agregar más juegos según sea necesario
             } else if (categoria === 'aplicaciones') {
-                listaDescargas.innerHTML += '<li><a href="descargas/aplicaciones.zip">Aplicación 1</a></li>';
-                listaDescargas.innerHTML += '<li><a href="descargas/aplicaciones2.zip">Aplicación 2</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/aplicaciones.zip"><img src="icono_aplicaciones.png" alt="Aplicaciones" width="30" height="30"> Aplicación 1</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/aplicaciones2.zip"><img src="icono_aplicaciones.png" alt="Aplicaciones" width="30" height="30"> Aplicación 2</a></li>';
                 // Agregar más aplicaciones según sea necesario
             } else if (categoria === 'programacion') {
-                listaDescargas.innerHTML += '<li><a href="descargas/programacion.zip">Proyecto 1</a></li>';
-                listaDescargas.innerHTML += '<li><a href="descargas/programacion2.zip">Proyecto 2</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/programacion.zip"><img src="icono_programacion.png" alt="Programación" width="30" height="30"> Proyecto 1</a></li>';
+                listaDescargas.innerHTML += '<li><a href="descargas/programacion2.zip"><img src="icono_programacion.png" alt="Programación" width="30" height="30"> Proyecto 2</a></li>';
                 // Agregar más proyectos de programación según sea necesario
             } else if (categoria === 'tutoriales') {
                 var opciones = document.createElement('div');
                 opciones.className = 'options';
-                opciones.innerHTML = '<a href="#" onclick="verTutoriales(\'aplicaciones\')">Aplicaciones</a>' +
-                                      '<a href="#" onclick="verTutoriales(\'juegos\')">Juegos</a>' +
-                                      '<a href="#" onclick="verTutoriales(\'programacion\')">Programación</a>';
+                opciones.innerHTML = '<a href="#" onclick="verTutoriales(\'aplicaciones\')"><img src="icono_aplicaciones.png" alt="Aplicaciones" width="30" height="30"> Aplicaciones</a>' +
+                                      '<a href="#" onclick="verTutoriales(\'juegos\')"><img src="icono_juegos.png" alt="Juegos" width="30" height="30"> Juegos</a>' +
+                                      '<a href="#" onclick="verTutoriales(\'programacion\')"><img src="icono_programacion.png" alt="Programación" width="30" height="30"> Programación</a>';
                 listaDescargas.appendChild(opciones);
             }
         }
